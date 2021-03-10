@@ -49,7 +49,7 @@ namespace lab_5._1
         public double first_expression(double x)=> Math.Sin(x-1) - 2 * Math.Pow(x, 3);
 
         // производная первого выражения
-        public double df1(double x) => -6 * Math.Pow(x, 2) + Math.Cos(x - 1);
+        public double df1(double x) => -(6 * Math.Pow(x, 2) + Math.Cos(x - 1));
 
 
         //метод ньютона
@@ -150,9 +150,7 @@ namespace lab_5._1
                 }
             }
 
-
             return midl_of_x;
-
         }
     }
 }

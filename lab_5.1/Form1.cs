@@ -31,13 +31,6 @@ namespace lab_5._1
         }
 
 
-        private void textBox1_TextChanged( object sender, EventArgs e )
-        {
-
-
-
-        }
-
         private void button1_Click( object sender, EventArgs e )
         {
             try
@@ -92,7 +85,7 @@ namespace lab_5._1
 
             textBox12.Text = Convert.ToString( try2.half_division_method( first_ex ) );
 
-            textBox11.Text = Convert.ToString( try2.second_expression( try2.half_division_method( first_ex ) ) );
+            textBox10.Text = Convert.ToString( try2.first_expression( try2.half_division_method( first_ex ) ) );
 
             textBox9.Text = Convert.ToString( try2.derived_expression_half_division_method( eps ) );
 
@@ -111,32 +104,7 @@ namespace lab_5._1
 
 
 
-        private void textBox8_TextChanged( object sender, EventArgs e )
-        {
-
-        }
-
-        private void textBox9_TextChanged( object sender, EventArgs e )
-        {
-
-        }
-
         private void textBox10_TextChanged( object sender, EventArgs e )
-        {
-
-        }
-
-        private void textBox11_TextChanged( object sender, EventArgs e )
-        {
-
-        }
-
-        private void textBox12_TextChanged( object sender, EventArgs e )
-        {
-
-        }
-
-        private void textBox7_TextChanged( object sender, EventArgs e )
         {
 
         }
@@ -182,6 +150,26 @@ namespace lab_5._1
         }
 
         private void chart2_Click( object sender, EventArgs e )
+        {
+
+        }
+
+        private void textBox2_TextChanged( object sender, EventArgs e )
+        {
+
+        }
+
+        private void textBox6_TextChanged( object sender, EventArgs e )
+        {
+
+        }
+
+        private void textBox_e_TextChanged( object sender, EventArgs e )
+        {
+
+        }
+
+        private void textBox_x_TextChanged( object sender, EventArgs e )
         {
 
         }
