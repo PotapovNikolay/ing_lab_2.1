@@ -33,17 +33,16 @@ namespace lab_5._1
             }
         }
 
-
         public Deleg(double E)
         {
             this.E = E;
         }
 
         //второе выражение
-        public double second_expression(double x)=> ( Math.Pow( x, 3 ) - ( 4 * Math.Pow( x, 2 ) ) + x - 1 );
+        public double second_expression(double x)=> (2* Math.Pow( x, 3 ) -  4 * Math.Pow( x, 2 )  + x - 1 );
         
         //производная второго выражения
-        public double df2( double x )=> 3 * Math.Pow( x, 2 ) - 8 * x + 1;
+        public double df2( double x )=> 6 * Math.Pow( x, 2 ) - 8 * x + 1;
 
         //первое выражение
         public double first_expression(double x)=> Math.Sin(x-1) - 2 * Math.Pow(x, 3);

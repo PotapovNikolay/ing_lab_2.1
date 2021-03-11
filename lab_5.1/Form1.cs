@@ -173,5 +173,10 @@ namespace lab_5._1
         {
 
         }
+
+        private void textBox10_TextChanged_1( object sender, EventArgs e )
+        {
+
+        }
     }
 }

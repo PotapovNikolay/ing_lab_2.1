@@ -416,6 +416,7 @@ namespace lab_5._1
             this.textBox10.Size = new System.Drawing.Size(173, 32);
             this.textBox10.TabIndex = 26;
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged_1);
             // 
             // Form1
             // 

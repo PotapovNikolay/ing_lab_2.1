@@ -14,6 +14,7 @@ namespace lab6_1
     public partial class Form1 : Form
     {
 
+
         public Form1()
         {
 
@@ -41,36 +42,19 @@ namespace lab6_1
             }
         }
 
-        private void culc()
+
+        public delegate float Del(int x);
+
+        private void button2_Click( object sender, EventArgs e )
         {
 
-            Massiv m = new Massiv( );
+            Massiv m = new Massiv();
 
             for ( int rows = 0; rows < dataGridView1.Rows.Count; rows++ )
             {
                 for ( int col = 0; col < dataGridView1.Rows [ rows ].Cells.Count; col++ )
                 {
-                    m.my_mass [ rows, col ] = Convert.ToDouble( dataGridView1.Rows [ rows ].Cells [ col ].Value );
-                }
-            }
-            
-        }
-
-        private void button2_Click( object sender, EventArgs e )
-        {
-            culc();
-            //Massiv m2 = m;
-
-
-            float[,] myg = new float[3, 3];
-
-            for ( int rows = 0; rows < 3; rows++ )
-            {
-                for ( int col = 0; col < 3; col++ )
-                {
-                    myg[rows, col] = (float) Convert.ToDouble(dataGridView1.Rows[rows].Cells[col].Value);
-
-
+                    m.my_mass [ rows, col ] = (float)(Convert.ToDouble( dataGridView1.Rows [ rows ].Cells [ col ].Value ));
                 }
             }
 
@@ -95,13 +79,15 @@ namespace lab6_1
 
             for (int i = 0; i < 3;i++)
             {
-                float rez_row1 = myg [ i, 1 ] + myg [ i, 2 ] + myg [ i, 0 ];
+                m.rez_row(i);
 
-                float x1 = myg [ i, 0 ] / rez_row1 * 100;
+                Func<int, float> X = m.rez_row;
 
-                float x2 = myg [ i, 1 ] / rez_row1 * 100 + x1;
+                float x1 = m.X1(X, i,0);
 
-                float x3 = myg [ i, 2 ] / rez_row1 * 100 + x2;
+                float x2 = m.X1(X, i, 1) + x1;
+
+                float x3 = m.X1(X, i, 2) + x2;
 
                 switch (i)
                 {
