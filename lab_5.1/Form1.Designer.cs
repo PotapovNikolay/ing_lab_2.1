@@ -30,9 +30,9 @@ namespace lab_5._1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.textBox_x = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_ex1 = new System.Windows.Forms.TextBox();
@@ -60,6 +60,7 @@ namespace lab_5._1
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -229,30 +230,30 @@ namespace lab_5._1
             this.chart2.BorderSkin.BorderColor = System.Drawing.Color.White;
             this.chart2.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chart2.BorderSkin.PageColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(155)))), ((int)(((byte)(206)))));
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(155)))), ((int)(((byte)(206)))));
-            chartArea1.BorderColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            chartArea1.ShadowColor = System.Drawing.Color.White;
-            this.chart2.ChartAreas.Add(chartArea1);
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(155)))), ((int)(((byte)(206)))));
+            chartArea2.BorderColor = System.Drawing.Color.White;
+            chartArea2.Name = "ChartArea1";
+            chartArea2.ShadowColor = System.Drawing.Color.White;
+            this.chart2.ChartAreas.Add(chartArea2);
             this.chart2.Location = new System.Drawing.Point(12, 362);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.EmptyPointStyle.BorderWidth = 2;
-            series1.Font = new System.Drawing.Font("Old English Text MT", 7.8F);
-            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(196)))), ((int)(((byte)(213)))));
-            series1.MarkerBorderWidth = 2;
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.EmptyPointStyle.BorderWidth = 2;
+            series2.Font = new System.Drawing.Font("Old English Text MT", 7.8F);
+            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(196)))), ((int)(((byte)(213)))));
+            series2.MarkerBorderWidth = 2;
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(599, 305);
             this.chart2.TabIndex = 16;
             this.chart2.Text = "chart2";
-            title1.ForeColor = System.Drawing.Color.White;
-            title1.Name = "Title1";
-            title1.ShadowColor = System.Drawing.Color.White;
-            title1.Text = "график функции";
-            this.chart2.Titles.Add(title1);
+            title2.ForeColor = System.Drawing.Color.White;
+            title2.Name = "Title1";
+            title2.ShadowColor = System.Drawing.Color.White;
+            title2.Text = "график функции";
+            this.chart2.Titles.Add(title2);
             this.chart2.Click += new System.EventHandler(this.chart2_Click);
             // 
             // button_help
@@ -418,12 +419,23 @@ namespace lab_5._1
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged_1);
             // 
+            // textBox11
+            // 
+            this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(155)))), ((int)(((byte)(206)))));
+            this.textBox11.Location = new System.Drawing.Point(191, 12);
+            this.textBox11.Multiline = true;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(241, 42);
+            this.textBox11.TabIndex = 27;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(155)))), ((int)(((byte)(206)))));
             this.ClientSize = new System.Drawing.Size(624, 832);
+            this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -486,6 +498,7 @@ namespace lab_5._1
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.TextBox textBox11;
     }
 }
 

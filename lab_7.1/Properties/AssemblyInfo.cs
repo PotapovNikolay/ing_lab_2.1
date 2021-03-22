@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle( "WindowsFormsApp1" )]
+[assembly: AssemblyTitle( "lab_7.1" )]
 [assembly: AssemblyDescription( "" )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "" )]
-[assembly: AssemblyProduct( "WindowsFormsApp1" )]
+[assembly: AssemblyProduct( "lab_7.1" )]
 [assembly: AssemblyCopyright( "Copyright ©  2021" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible( false )]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid( "390573e6-e920-425e-906a-e8021ee91010" )]
+[assembly: Guid( "2456baf5-8c50-4059-b80b-b3f14ac26e02" )]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

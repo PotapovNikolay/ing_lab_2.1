@@ -136,6 +136,7 @@ namespace lab6_1
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(105, 32);
             this.text1.TabIndex = 1;
+            this.text1.TextChanged += new System.EventHandler(this.text1_TextChanged);
             // 
             // textBox2
             // 
@@ -145,6 +146,7 @@ namespace lab6_1
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(105, 32);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -183,6 +185,7 @@ namespace lab6_1
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(105, 32);
             this.textBox4.TabIndex = 6;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 

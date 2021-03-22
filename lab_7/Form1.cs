@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace lab_7
 {
     public partial class Form1 : Form
     {
@@ -16,5 +16,6 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
     }
 }

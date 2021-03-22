@@ -12,6 +12,7 @@ using System.Windows.Forms;
 namespace lab_5._1
 {
     
+
     public partial class Form1 : Form
     {
         double eps { get; set; }
@@ -44,6 +45,10 @@ namespace lab_5._1
                 newform.Show();
             }
             Deleg try1 = new Deleg(eps);
+
+            Handler handler1 = new Handler();
+
+            try1.onzero += handler1.Message;
 
             Func<double,double> second_ex = try1.second_expression;
 
@@ -175,6 +180,11 @@ namespace lab_5._1
         }
 
         private void textBox10_TextChanged_1( object sender, EventArgs e )
+        {
+
+        }
+
+        private void textBox11_TextChanged( object sender, EventArgs e )
         {
 
         }

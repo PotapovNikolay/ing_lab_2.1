@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace WindowsFormsApp1.Properties
+namespace lab_7._1.Properties
 {
     /// <summary>
     ///   Класс ресурсов со строгим типом для поиска локализованных строк и пр.
@@ -43,7 +43,7 @@ namespace WindowsFormsApp1.Properties
             {
                 if ( ( resourceMan == null ) )
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager( "WindowsFormsApp1.Properties.Resources", typeof( Resources ).Assembly );
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager( "lab_7._1.Properties.Resources", typeof( Resources ).Assembly );
                     resourceMan = temp;
                 }
                 return resourceMan;

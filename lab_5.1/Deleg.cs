@@ -14,6 +14,10 @@ namespace lab_5._1
     class Deleg
     {
 
+        public delegate void MethodContainer();
+
+        public event MethodContainer onzero;
+
         private double x;
         private double E;
 
@@ -69,7 +73,7 @@ namespace lab_5._1
 
             if (f(a) * f(b) > 0)
             {
-                throw new Exception( "неправильные границы" );
+                onzero();
             }
             else
             {

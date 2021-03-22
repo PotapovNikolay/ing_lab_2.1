@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace lab6_1
 {
-    public class Point
+    public class Handler
     {
-        public double [,] my_mass;
+        public void Message()
+        {
+
+
+
+        }
 
         
 

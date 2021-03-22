@@ -89,45 +89,17 @@ namespace lab6_1
 
                 float x3 = m.X1(X, i, 2) + x2;
 
-                switch (i)
-                {
-                    case 0:
 
-                        g.FillRectangle( hbr1, 1 , 1, x1 - 1, 29 );
+                g.FillRectangle( hbr1, 1, i * 80, x1 - 1, 30);
 
-                        g.FillRectangle( hbr2, x1, 1, ( x2 - x1 ) , 29 );
+                g.FillRectangle( hbr2, x1, i * 80, ( x2 - x1 ), 30 );
 
-                        g.FillRectangle(hbr,x2,1,(x3-x2),29);
+                g.FillRectangle( hbr, x2, i * 80-1, ( x3 - x2 ), 30 );
 
-                        g.DrawLine( pen, x1, 0, x1, 30 );
-                        g.DrawLine( pen, x2, 0, x2, 30 );
-                        g.DrawLine( pen, x3, 0, x3, 30 );
-                        break;
-                    case 1:
-                        g.FillRectangle( hbr1, 1, 81, x1 , 29 );
+                g.DrawLine( pen, x1, i * 80, x1, i*80 );
+                g.DrawLine( pen, x2, i * 80, x2, i* 80 );
+                g.DrawLine( pen, x3, i * 80, x3, i*80 );
 
-                        g.FillRectangle( hbr2, x1, 81, ( x2 - x1 ), 29 );
-
-                        g.FillRectangle( hbr, x2, 81, ( x3 - x2 ), 29 );
-
-                        g.DrawLine( pen, x1, 80, x1, 110 );
-                        g.DrawLine( pen, x2, 80, x2, 110 );
-                        g.DrawLine( pen, x3, 80, x3, 110 );
-                        break;
-                    case 2:
-                        g.FillRectangle( hbr1, 1, 161, x1, 29 );
-
-                        g.FillRectangle( hbr2, x1, 161, ( x2 - x1 ), 29 );
-
-                        g.FillRectangle( hbr, x2, 161, ( x3 - x2 ), 29 );
-
-                        g.DrawLine( pen, x1, 160, x1, 190 );
-                        g.DrawLine( pen, x2, 160, x2, 190 );
-                        g.DrawLine( pen, x3, 160, x3, 190 );
-                        break;
-                }
-
-                
             }
 
             
@@ -138,6 +110,26 @@ namespace lab6_1
         private void btn_Hover( object sender, EventArgs e )
         {
             button1.BackColor = Color.FromArgb( 237, 242, 251);
+        }
+
+        private void textBox4_TextChanged( object sender, EventArgs e )
+        {
+
+        }
+
+        private void pictureBox1_Click( object sender, EventArgs e )
+        {
+
+        }
+
+        private void text1_TextChanged( object sender, EventArgs e )
+        {
+
+        }
+
+        private void textBox2_TextChanged( object sender, EventArgs e )
+        {
+
         }
     }
 }
