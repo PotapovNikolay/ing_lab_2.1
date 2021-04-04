@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,30 +16,18 @@ namespace lab_7._1
     public partial class Form1 : Form
     {
 
-        public delegate void Show();
-
-        //double a1 { get; set; }
-        //double b1 { get; set; }
-        //double c1 { get; set; }
-
         public VectorAll new_vector = new VectorAll();
 
         public Form1()
         {
+
             InitializeComponent();
 
         }
 
-        //public void ini()
-        //{
-
-        //    a1 = Convert.ToDouble(textBox1.Text);
-        //    b1 = Convert.ToDouble(textBox2.Text);
-        //    c1 = Convert.ToDouble(textBox3.Text);
-        //}
-
-        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        public void Clear_f()
         {
+
             if ( dataGridView1.DataSource != null )
             {
                 dataGridView1.DataSource = null;
@@ -48,6 +37,12 @@ namespace lab_7._1
                 dataGridView1.Rows.Clear();
             }
 
+        }
+
+        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clear_f();
+
             dataGridView1.Visible = true;
 
             dataGridView1.AllowUserToResizeRows = true;
@@ -55,34 +50,22 @@ namespace lab_7._1
             dataGridView1.AllowUserToDeleteRows = true;
         }
 
-
-
         private void просмотретьToolStripMenuItem_Click( object sender, EventArgs e )
         {
-            //for ( int i = 0; i < dataGridView1.Columns.Count; i++ )
-            //{
-            //    for ( int j = 0; j < dataGridView1.Rows.Count; j++ )
-            //    {
-            //        dataGridView1.Rows [ j ].Cells [ i ].Value = DBNull.Value;
-            //    }
-            //}
-
-
-            for (int rows = 0; rows < dataGridView1.Rows.Count; rows++)
-            {
-                foreach (Vector3D v in new_vector.list)
-                {
-                    dataGridView1.Rows[rows].Cells[0].Value = v.a;
-                    dataGridView1.Rows[rows].Cells[1].Value = v.b;
-                    dataGridView1.Rows[rows].Cells[2].Value = v.c;
-
-
-                }
-            }
-
-            textBox1.Text = Convert.ToString( new_vector.list.Count );
+            
+            int rows = 0;
 
             dataGridView1.Visible = true;
+
+
+            foreach ( Vector3D v in new_vector.list )
+            {
+                dataGridView1 [ 0, rows ].Value = v.a;
+                dataGridView1 [ 1, rows ].Value = v.b;
+                dataGridView1 [ 2, rows ].Value = v.c;
+                rows++;
+            }
+
 
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AllowUserToAddRows = false;
@@ -93,84 +76,151 @@ namespace lab_7._1
         private void сохранитьToolStripMenuItem_Click( object sender, EventArgs e )
         {
 
-
             MessageBox.Show( "Вы добавили вектор!" );
 
-            for ( int rows = 0; rows < dataGridView1.Rows.Count; rows++ )
+
+            for ( int rows = 0; rows < dataGridView1.Rows.Count - 1; rows++ )
             {
-                new_vector.add_vector( Convert.ToDouble( dataGridView1.Rows[ rows ].Cells [ 0 ].Value ), Convert.ToDouble( dataGridView1.Rows [ rows ].Cells [ 1 ].Value), Convert.ToDouble( dataGridView1.Rows [ rows ].Cells [ 2 ].Value ));
+
+                new_vector.add_vector(
+                    Convert.ToDouble( dataGridView1 [ 0, rows ].Value ),
+                    Convert.ToDouble( dataGridView1 [ 1, rows ].Value ),
+                    Convert.ToDouble( dataGridView1 [ 2, rows ].Value ) );
+
             }
+
 
             dataGridView1.Visible = false;
 
-            textBox1.Text = Convert.ToString( new_vector.list.Count );
+
         }
 
         private void редактироватьToolStripMenuItem_Click( object sender, EventArgs e )
         {
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.Visible = true;
+
+            dataGridView1.AllowUserToResizeRows = true;
+            dataGridView1.AllowUserToAddRows = true;
+            dataGridView1.AllowUserToDeleteRows = true;
+
         }
 
 
         private void сортировкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if ( dataGridView1.DataSource != null )
-            {
-                dataGridView1.DataSource = null;
-            }
-            else
-            {
-                dataGridView1.Rows.Clear();
-            }
-
+            Clear_f();
 
             new_vector.sort_vectors();
-            textBox1.Text = Convert.ToString( new_vector.list.Count );
-           
 
 
-            //dataGridView1.DataSource = new_vector.list_sort;
             foreach (Vector3D v in new_vector.list)
             {
                 dataGridView1.Rows.Add(v.a, v.b, v.c);
             }
 
-            
 
-            //for ( int rows = 0; rows < dataGridView1.Rows.Count; rows++ )
-            //{
-            //    foreach ( Vector3D v in new_vector.list_sort )
-            //    {
-            //        dataGridView1.Rows [ rows ].Cells [ 0 ].Value = v.a;
-            //        dataGridView1.Rows [ rows ].Cells [ 1 ].Value = v.b;
-            //        dataGridView1.Rows [ rows ].Cells [ 2 ].Value = v.c;
-
-
-            //    }
-
-            //}
-
-            dataGridView1.AllowUserToResizeRows = true;
-            dataGridView1.AllowUserToAddRows = true;
-            dataGridView1.AllowUserToDeleteRows = true;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Visible = true;
         }
 
         private void загрузитьToolStripMenuItem_Click( object sender, EventArgs e )
         {
+
+            Clear_f();
+
+
+            int count = System.IO.File.ReadAllLines( "TextFile.txt" ).Length;
+
             string line;
+            int i = 0;
+            string [] arrString = new string [ count ];
 
-            string[] arrString = new string [ dataGridView1.Rows.Count ];
+            System.IO.StreamReader file = new System.IO.StreamReader( @"C:\Users\npota\source\repos\ing_lab_2.1\lab_7.1\TextFile.txt" );
 
-            System.IO.StreamReader file = new System.IO.StreamReader( @"C:\Users\npota\source\repos\ing_lab_2.1\TextFile.txt" );
-
-            while ((line = file.ReadLine())!= null)
+            while ((line = file.ReadLine())!= null & i < count )
             {
                 arrString = line.Split(' ');
-
+                dataGridView1.Rows.Add(arrString[0], arrString [ 1 ], arrString [ 2 ] ); 
+                i++;
             }
 
+            dataGridView1.Rows.Add(null, null, null);
+            
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+
+
+            MessageBox.Show( "Вектор загружен!" );
+        }
+
+
+        private void линейныйToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+            dataGridView1.Visible = true;
+
+
+            Clear_f();
+            new_vector.line_search();
+
+
+            int i = 0;
+
+            foreach (Vector3D VARIABLE in new_vector.list)
+            {
+                if (i == new_vector.index)
+                {
+                    dataGridView1.Rows.Add(VARIABLE.a, VARIABLE.b, VARIABLE.c);
+
+                }
+
+                i++;
+            }
+
+
+            MessageBox.Show( "Вектор найден!" );
+
+        }
+
+        private void бинарныйToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+            dataGridView1.Visible = true;
+            
+            Clear_f();
+
+            int ind = new_vector.BinarySearch();
+
+            int i = 0;
+
+            foreach ( Vector3D VARIABLE in new_vector.list )
+            {
+                if ( i == ind )
+                {
+                    dataGridView1.Rows.Add( VARIABLE.a, VARIABLE.b, VARIABLE.c );
+
+                }
+
+                i++;
+            }
+        }
+
+        private void заданиеToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+            ArrayList new_array_of_vectors = new ArrayList();
+
+            foreach (Vector3D v in new_vector.list)
+            {
+                new_array_of_vectors.Add(v);
+            }
+
+            MessageBox.Show( "Новая коллекция создана!" );
+        }
+
+        private void выходToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+            Application.Exit();
+            this.Close();
         }
     }
 }

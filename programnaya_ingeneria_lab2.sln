@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ing_lab_2.1", "ing_lab_2.1\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AC7F89C4-0C79-481E-B94E-3EF860D7662D}"
 	ProjectSection(SolutionItems) = preProject
+		lab7.txt = lab7.txt
 		TextFile.txt = TextFile.txt
 	EndProjectSection
 EndProject
@@ -39,6 +40,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lab_7", "lab_7", "{9F2C7F53-6731-4A8F-8290-3DE8BE03B5D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_7.1", "lab_7.1\lab_7.1.csproj", "{2456BAF5-8C50-4059-B80B-B3F14AC26E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_8", "lab_8\lab_8.csproj", "{CD6EFB0D-EE15-417E-9942-8214930CB629}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +85,10 @@ Global
 		{2456BAF5-8C50-4059-B80B-B3F14AC26E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2456BAF5-8C50-4059-B80B-B3F14AC26E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2456BAF5-8C50-4059-B80B-B3F14AC26E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD6EFB0D-EE15-417E-9942-8214930CB629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6EFB0D-EE15-417E-9942-8214930CB629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6EFB0D-EE15-417E-9942-8214930CB629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6EFB0D-EE15-417E-9942-8214930CB629}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,14 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace lab_7._1
 {
 
 
-    class Vector3D
+    class Vector3D: IComparable
     {
 
         public double c;
@@ -17,21 +19,6 @@ namespace lab_7._1
 
         public double a;
 
-        //public double A
-        //{
-        //    get { return a; }
-        //    set
-        //    {
-        //        if ( value is double )
-        //        {
-        //            a = value;
-        //        }
-        //        else
-        //        {
-        //            throw new ArgumentOutOfRangeException();
-        //        }
-        //    }
-        //}
 
         public Vector3D(double a, double b, double c)
         {
@@ -49,5 +36,35 @@ namespace lab_7._1
             return Math.Round( lenght_vector, 2 );
 
         }
+
+
+
+        public int CompareTo( object obj )
+        {
+            Vector3D v = obj as Vector3D;
+
+            if ( v != null )
+            {
+                if ( this.a < v.a && this.b < v.b && this.c < v.c )
+                {
+                    return 1;
+                }
+                else if ( this.a > v.a && this.b > v.b && this.c > v.c )
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
+
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+        
     }
 }

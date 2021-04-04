@@ -42,19 +42,14 @@ namespace lab_7._1
             this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.линейныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.бинарныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заданиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,7 +61,7 @@ namespace lab_7._1
             this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(980, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(705, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,12 +118,14 @@ namespace lab_7._1
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // работаToolStripMenuItem
             // 
             this.работаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сортировкаToolStripMenuItem,
-            this.поискToolStripMenuItem});
+            this.поискToolStripMenuItem,
+            this.заданиеToolStripMenuItem});
             this.работаToolStripMenuItem.Name = "работаToolStripMenuItem";
             this.работаToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.работаToolStripMenuItem.Text = "Работа";
@@ -136,7 +133,7 @@ namespace lab_7._1
             // сортировкаToolStripMenuItem
             // 
             this.сортировкаToolStripMenuItem.Name = "сортировкаToolStripMenuItem";
-            this.сортировкаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.сортировкаToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.сортировкаToolStripMenuItem.Text = "Сортировка";
             this.сортировкаToolStripMenuItem.Click += new System.EventHandler(this.сортировкаToolStripMenuItem_Click);
             // 
@@ -146,7 +143,7 @@ namespace lab_7._1
             this.линейныйToolStripMenuItem,
             this.бинарныйToolStripMenuItem});
             this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
-            this.поискToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.поискToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.поискToolStripMenuItem.Text = "Поиск";
             // 
             // линейныйToolStripMenuItem
@@ -154,12 +151,21 @@ namespace lab_7._1
             this.линейныйToolStripMenuItem.Name = "линейныйToolStripMenuItem";
             this.линейныйToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.линейныйToolStripMenuItem.Text = "Линейный";
+            this.линейныйToolStripMenuItem.Click += new System.EventHandler(this.линейныйToolStripMenuItem_Click);
             // 
             // бинарныйToolStripMenuItem
             // 
             this.бинарныйToolStripMenuItem.Name = "бинарныйToolStripMenuItem";
             this.бинарныйToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.бинарныйToolStripMenuItem.Text = "Бинарный";
+            this.бинарныйToolStripMenuItem.Click += new System.EventHandler(this.бинарныйToolStripMenuItem_Click);
+            // 
+            // заданиеToolStripMenuItem
+            // 
+            this.заданиеToolStripMenuItem.Name = "заданиеToolStripMenuItem";
+            this.заданиеToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.заданиеToolStripMenuItem.Text = "Задание";
+            this.заданиеToolStripMenuItem.Click += new System.EventHandler(this.заданиеToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
@@ -174,7 +180,7 @@ namespace lab_7._1
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(313, 62);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 148);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -203,57 +209,11 @@ namespace lab_7._1
             this.Column3.Name = "Column3";
             this.Column3.Width = 125;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dataGridView2.Location = new System.Drawing.Point(313, 62);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(655, 295);
-            this.dataGridView2.TabIndex = 2;
-            this.dataGridView2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "a";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "b";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "c";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(111, 387);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 189);
-            this.textBox1.TabIndex = 3;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 547);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView2);
+            this.ClientSize = new System.Drawing.Size(705, 547);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -262,7 +222,6 @@ namespace lab_7._1
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,11 +247,7 @@ namespace lab_7._1
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         public System.Windows.Forms.DataGridView dataGridView1;
-        public System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStripMenuItem заданиеToolStripMenuItem;
     }
 }
 
