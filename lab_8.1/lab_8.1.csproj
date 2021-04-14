@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD6EFB0D-EE15-417E-9942-8214930CB629}</ProjectGuid>
+    <ProjectGuid>{220F6F8E-CDED-426E-B912-8D7578E8CB1C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>lab_8</RootNamespace>
-    <AssemblyName>lab_8</AssemblyName>
+    <RootNamespace>lab_8._1</RootNamespace>
+    <AssemblyName>lab_8.1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,25 +46,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cement.cs" />
-    <Compile Include="Construction_materials.cs" />
+    <Compile Include="cement\Cement.cs" />
+    <Compile Include="cement\List_Of_Cements.cs" />
+    <Compile Include="cement\type_of_cement\Aluminacementcs.cs" />
+    <Compile Include="cement\type_of_cement\Portlandcementcs.cs" />
+    <Compile Include="cement\type_of_cement\types_of_Portland\Fast_hardening_port.cs" />
+    <Compile Include="cement\type_of_cement\types_of_Portland\Normally_hardening_port.cs" />
+    <Compile Include="cement\type_of_cement\types_of_Portland\Road.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gips\Gypsum.cs" />
+    <Compile Include="Gips\List_of_Gips.cs" />
+    <Compile Include="Gips\type_of_gips\Fast_hardening.cs" />
+    <Compile Include="Gips\type_of_gips\Normally_hardening.cs" />
+    <Compile Include="Gips\type_of_gips\Slowly_hardening.cs" />
+    <Compile Include="Glass\types\Quartz_glass.cs" />
+    <Compile Include="Glass\types\Silicate_glass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    <Compile Include="cement\type_of_cement\Romancement.cs" />
+    <Compile Include="Glass\Sheet_glass.cs" />
+    <Compile Include="wooden\List_of_wood.cs" />
+    <Compile Include="wooden\types\DSP.cs" />
+    <Compile Include="wooden\types\DVP.cs" />
+    <Compile Include="wooden\types\parquet_types\Laminate.cs" />
+    <Compile Include="wooden\types\parquet_types\Parquet_board.cs" />
+    <Compile Include="wooden\types\parquet_types\Block_parquet.cs" />
+    <Compile Include="wooden\types\parquet_types\Massive_parquet.cs" />
+    <Compile Include="wooden\types\Plywood.cs" />
+    <Compile Include="wooden\types\Parquet.cs" />
+    <Compile Include="wooden\Wooden_building_structures.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,5 +101,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

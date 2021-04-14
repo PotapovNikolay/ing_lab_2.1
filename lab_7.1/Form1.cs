@@ -18,6 +18,9 @@ namespace lab_7._1
 
         public VectorAll new_vector = new VectorAll();
 
+        public string[] find_vector_arr = new string[3];
+        public ArrayList new_array_of_vectors = new ArrayList();
+
         public Form1()
         {
 
@@ -52,22 +55,25 @@ namespace lab_7._1
 
         private void просмотретьToolStripMenuItem_Click( object sender, EventArgs e )
         {
-            
+            Clear_f();
+
             int rows = 0;
 
             dataGridView1.Visible = true;
 
 
-            foreach ( Vector3D v in new_vector.list )
-            {
-                dataGridView1 [ 0, rows ].Value = v.a;
-                dataGridView1 [ 1, rows ].Value = v.b;
-                dataGridView1 [ 2, rows ].Value = v.c;
-                rows++;
-            }
+            //foreach ( Vector3D v in new_vector.list )
+            //{
+            //    dataGridView1 [ 0, rows ].Value = v.a;
+            //    dataGridView1 [ 1, rows ].Value = v.b;
+            //    dataGridView1 [ 2, rows ].Value = v.c;
+            //    rows++;
+            //}
 
+            dataGridView1.DataSource = null;
+           dataGridView1.DataSource = new_vector.list;
 
-            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.ReadOnly = true;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
 
@@ -122,42 +128,58 @@ namespace lab_7._1
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Visible = true;
+            dataGridView1.ReadOnly = true;
         }
 
         private void загрузитьToolStripMenuItem_Click( object sender, EventArgs e )
         {
+            var filePath = string.Empty;
 
             Clear_f();
+             
+            OpenFileDialog ofd = new OpenFileDialog();
 
+            ofd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; 
 
-            int count = System.IO.File.ReadAllLines( "TextFile.txt" ).Length;
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                filePath = ofd.FileName;
+                MessageBox.Show("Вектор загружен!");
+            }
+
+            int count = System.IO.File.ReadAllLines( filePath ).Length;
 
             string line;
             int i = 0;
             string [] arrString = new string [ count ];
 
-            System.IO.StreamReader file = new System.IO.StreamReader( @"C:\Users\npota\source\repos\ing_lab_2.1\lab_7.1\TextFile.txt" );
+            System.IO.StreamReader file = new System.IO.StreamReader(filePath);
 
             while ((line = file.ReadLine())!= null & i < count )
             {
                 arrString = line.Split(' ');
-                dataGridView1.Rows.Add(arrString[0], arrString [ 1 ], arrString [ 2 ] ); 
+                dataGridView1.Rows.Add(arrString[0], arrString [ 1 ], arrString [ 2 ] );
                 i++;
+
+
             }
 
             dataGridView1.Rows.Add(null, null, null);
-            
+
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
 
+            dataGridView1.Visible = true;
 
-            MessageBox.Show( "Вектор загружен!" );
+
         }
 
+        
 
         private void линейныйToolStripMenuItem_Click( object sender, EventArgs e )
         {
+
             dataGridView1.Visible = true;
 
 
@@ -180,6 +202,7 @@ namespace lab_7._1
 
 
             MessageBox.Show( "Вектор найден!" );
+            dataGridView1.ReadOnly = true;
 
         }
 
@@ -203,18 +226,46 @@ namespace lab_7._1
 
                 i++;
             }
+            dataGridView1.ReadOnly = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            groupBox1.Visible = false;
+
+            find_vector_arr = textBox1.Text.Split(' ');
+            Vector3D find_v = new Vector3D(
+                Convert.ToDouble(find_vector_arr[0]),
+                Convert.ToDouble(find_vector_arr[1]),
+                Convert.ToDouble(find_vector_arr[2])
+            );
+            foreach (Vector3D v in new_vector.list)
+            {
+                if (v.vector_lenght(v) < find_v.vector_lenght(find_v))
+                {
+                    new_array_of_vectors.Add(v);
+                }
+            }
+            foreach (Vector3D VARIABLE in new_array_of_vectors)
+            {
+                dataGridView1.Rows.Add(VARIABLE.a, VARIABLE.b, VARIABLE.c);
+            }
+
+            dataGridView1.Visible = true;
         }
 
         private void заданиеToolStripMenuItem_Click( object sender, EventArgs e )
         {
-            ArrayList new_array_of_vectors = new ArrayList();
+            Clear_f();
+            groupBox1.Visible = true;
 
-            foreach (Vector3D v in new_vector.list)
-            {
-                new_array_of_vectors.Add(v);
-            }
+            
 
-            MessageBox.Show( "Новая коллекция создана!" );
+            
+
+
+            dataGridView1.ReadOnly = true;
         }
 
         private void выходToolStripMenuItem_Click( object sender, EventArgs e )
@@ -222,5 +273,7 @@ namespace lab_7._1
             Application.Exit();
             this.Close();
         }
+
+        
     }
 }

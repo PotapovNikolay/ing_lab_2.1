@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab_8
+namespace lab_8._1
 {
-    class Cement:Construction_materials
+    sealed class Normally_hardening_port
     {
+
+        
 
     }
 }

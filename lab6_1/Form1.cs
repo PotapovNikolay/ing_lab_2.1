@@ -25,21 +25,21 @@ namespace lab6_1
 
 
         private void Form1_Load( object sender, EventArgs e ) { }
-        private void button1_Click( object sender, EventArgs e )
+        private void button1_Click(object sender, EventArgs e)
         {
 
-            string [] row1 = new string [] { text1.Text, textBox2.Text, textBox3.Text };
+            //string[] row1 = new string[] { text1.Text, textBox2.Text, textBox3.Text };
 
-            string [] row2 = new string [] { textBox5.Text, textBox4.Text, textBox1.Text };
+            //string[] row2 = new string[] { textBox5.Text, textBox4.Text, textBox1.Text };
 
-            string [] row3 = new string [] { textBox8.Text, textBox7.Text, textBox6.Text };
+            //string[] row3 = new string[] { textBox8.Text, textBox7.Text, textBox6.Text };
 
-            object [] rows = new Object[] {row1, row2,row3 };
+            //object[] rows = new Object[] { row1, row2, row3 };
 
-            foreach (string[] r in rows)
-            {
-                dataGridView1.Rows.Add(r);
-            }
+            //foreach (string[] r in rows)
+            //{
+            //    dataGridView1.Rows.Add(r);
+            //}
         }
 
 
@@ -50,13 +50,18 @@ namespace lab6_1
 
             Massiv m = new Massiv();
 
-            for ( int rows = 0; rows < dataGridView1.Rows.Count; rows++ )
+            for ( int rows = 0; rows < dataGridView1.Rows.Count-1; rows++ )
             {
                 for ( int col = 0; col < dataGridView1.Rows [ rows ].Cells.Count; col++ )
                 {
-                    m.my_mass [ rows, col ] = (float)(Convert.ToDouble( dataGridView1.Rows [ rows ].Cells [ col ].Value ));
+                    m.my_mass [ col, rows ] = (float)(Convert.ToDouble( dataGridView1.Rows [ rows ].Cells [ col ].Value ));
                 }
             }
+
+            //for (int rows = 0; rows < dataGridView1.Rows.Count - 1; rows++)
+            //{
+            //    m.my_mass[rows, col] = (float) Convert.ToDouble(dataGridView1[0, rows].Value);
+            //}
 
             HatchBrush hbr = new HatchBrush( HatchStyle.ForwardDiagonal, Color.Black, Color.White );
             HatchBrush hbr1 = new HatchBrush( HatchStyle.Divot, Color.Black, Color.White );
