@@ -10,7 +10,7 @@ namespace lab_7._1
 {
 
 
-    class Vector3D: IComparable
+    public class Vector3D: IComparable
     {
 
         public double c;

@@ -21,10 +21,20 @@ namespace lab_7._1
         public string[] find_vector_arr = new string[3];
         public ArrayList new_array_of_vectors = new ArrayList();
 
+        DataTable table = new DataTable();
+
         public Form1()
         {
 
             InitializeComponent();
+
+
+
+            table.Columns.Add("a");
+            table.Columns.Add("b");
+            table.Columns.Add("c");
+
+
 
         }
 
@@ -47,10 +57,22 @@ namespace lab_7._1
             Clear_f();
 
             dataGridView1.Visible = true;
-
             dataGridView1.AllowUserToResizeRows = true;
             dataGridView1.AllowUserToAddRows = true;
             dataGridView1.AllowUserToDeleteRows = true;
+        }
+
+        private void addd(List<Vector3D> p)
+        {
+            object[] array = new object[3];
+
+            foreach (Vector3D v in p)
+            {
+                array[0] = v.a;
+                array[1] = v.b;
+                array[2] = v.c;
+                table.Rows.Add(array);
+            }
         }
 
         private void просмотретьToolStripMenuItem_Click( object sender, EventArgs e )
@@ -58,6 +80,14 @@ namespace lab_7._1
             Clear_f();
 
             int rows = 0;
+
+            addd(new_vector.list);
+
+
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+            dataGridView1.DataSource = table;
+
 
             dataGridView1.Visible = true;
 
@@ -70,8 +100,6 @@ namespace lab_7._1
             //    rows++;
             //}
 
-            dataGridView1.DataSource = null;
-           dataGridView1.DataSource = new_vector.list;
 
             dataGridView1.ReadOnly = true;
             dataGridView1.AllowUserToAddRows = false;
@@ -117,11 +145,15 @@ namespace lab_7._1
 
             new_vector.sort_vectors();
 
+            table.Clear();
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
 
-            foreach (Vector3D v in new_vector.list)
-            {
-                dataGridView1.Rows.Add(v.a, v.b, v.c);
-            }
+            addd(new_vector.list);
+
+            dataGridView1.DataSource = table;
+
+            
 
 
             dataGridView1.AllowUserToResizeRows = false;
@@ -157,20 +189,20 @@ namespace lab_7._1
 
             while ((line = file.ReadLine())!= null & i < count )
             {
-                arrString = line.Split(' ');
-                dataGridView1.Rows.Add(arrString[0], arrString [ 1 ], arrString [ 2 ] );
+                arrString = line.Split(' '); 
+                new_vector.add_vector(Convert.ToDouble(arrString[0]),Convert.ToDouble( arrString[1]), Convert.ToDouble(arrString[2]));
+
                 i++;
 
 
             }
 
-            dataGridView1.Rows.Add(null, null, null);
 
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
 
-            dataGridView1.Visible = true;
+            
 
 
         }
@@ -186,6 +218,8 @@ namespace lab_7._1
             Clear_f();
             new_vector.line_search();
 
+
+            
 
             int i = 0;
 
@@ -259,11 +293,6 @@ namespace lab_7._1
         {
             Clear_f();
             groupBox1.Visible = true;
-
-            
-
-            
-
 
             dataGridView1.ReadOnly = true;
         }

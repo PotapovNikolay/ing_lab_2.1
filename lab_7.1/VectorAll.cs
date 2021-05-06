@@ -18,7 +18,7 @@ namespace lab_7._1
         public double rez { get; set; }
         public int middle { get; set; }
 
-        public ArrayList list = new ArrayList();
+        public List<Vector3D> list = new List<Vector3D>();
         public ArrayList sum_vector_arr = new ArrayList();
 
         
