@@ -13,10 +13,23 @@ namespace lab_7._1
 
     public class VectorAll
     {
-        public double middle_sum_vectors { get; set; }
-        public int index { get; set; }
-        public double rez { get; set; }
-        public int middle { get; set; }
+        private double middle_sum_vectors { get; set; }
+
+        public double Middle_sum_vectors
+        {
+            get { return middle_sum_vectors; }
+            set { middle_sum_vectors = value; }
+        }
+
+        private int index { get; set; }
+
+        public double Index
+        {
+            get { return index; }
+            set { middle_sum_vectors = index; }
+        }
+
+        private double rez { get; set; }
 
         public List<Vector3D> list = new List<Vector3D>();
         public ArrayList sum_vector_arr = new ArrayList();

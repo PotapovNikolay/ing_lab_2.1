@@ -13,12 +13,29 @@ namespace lab_7._1
     public class Vector3D: IComparable
     {
 
-        public double c;
+        private double c;
 
-        public double b;
+        public double C
+        {
+            get { return c; }
+            set { c = value; }
+        }
 
-        public double a;
+        private double b;
 
+        public double B
+        {
+            get { return b; }
+            set { b = value; }
+        }
+
+        private double a;
+
+        public double A
+        {
+            get { return a; }
+            set { a = value; }
+        }
 
         public Vector3D(double a, double b, double c)
         {

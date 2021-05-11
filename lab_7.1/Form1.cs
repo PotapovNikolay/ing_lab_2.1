@@ -68,9 +68,9 @@ namespace lab_7._1
 
             foreach (Vector3D v in p)
             {
-                array[0] = v.a;
-                array[1] = v.b;
-                array[2] = v.c;
+                array[0] = v.A;
+                array[1] = v.B;
+                array[2] = v.C;
                 table.Rows.Add(array);
             }
         }
@@ -225,9 +225,9 @@ namespace lab_7._1
 
             foreach (Vector3D VARIABLE in new_vector.list)
             {
-                if (i == new_vector.index)
+                if (i == new_vector.Index)
                 {
-                    dataGridView1.Rows.Add(VARIABLE.a, VARIABLE.b, VARIABLE.c);
+                    dataGridView1.Rows.Add(VARIABLE.A, VARIABLE.B, VARIABLE.C);
 
                 }
 
@@ -254,7 +254,7 @@ namespace lab_7._1
             {
                 if ( i == ind )
                 {
-                    dataGridView1.Rows.Add( VARIABLE.a, VARIABLE.b, VARIABLE.c );
+                    dataGridView1.Rows.Add( VARIABLE.A, VARIABLE.B, VARIABLE.C );
 
                 }
 
@@ -283,7 +283,7 @@ namespace lab_7._1
             }
             foreach (Vector3D VARIABLE in new_array_of_vectors)
             {
-                dataGridView1.Rows.Add(VARIABLE.a, VARIABLE.b, VARIABLE.c);
+                dataGridView1.Rows.Add(VARIABLE.A, VARIABLE.B, VARIABLE.C);
             }
 
             dataGridView1.Visible = true;

@@ -17,9 +17,9 @@ namespace lab_7._1
             double rez = 0;
 
 
-            if ( line_s.middle_sum_vectors < y.vector_lenght( y ) || line_s.middle_sum_vectors > x.vector_lenght( x ) )
+            if ( line_s.Middle_sum_vectors < y.vector_lenght( y ) || line_s.Middle_sum_vectors > x.vector_lenght( x ) )
             {
-                if ( y.vector_lenght( y ) - line_s.middle_sum_vectors > line_s.middle_sum_vectors - x.vector_lenght(x))
+                if ( y.vector_lenght( y ) - line_s.Middle_sum_vectors > line_s.Middle_sum_vectors - x.vector_lenght(x))
                 {
                     rez = y.vector_lenght(y);
                 }
