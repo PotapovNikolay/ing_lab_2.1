@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+  <member name="vector">
+    <Vector3D>
+      <summary>
+        <c>vector3D</c>
+         Содержит перегрузку операторов и математические функции
+      </summary>
+       <remarks>
+         <para>Этот класс может вычислить длину вектора, сложить вектора, перемножить вектора</para>
+       </remarks>
+    </Vector3D>
+    <ToString>
+      <summary>
+        Перегрузка ToString
+      </summary>
+    </ToString>
+    <operatorplus>
+      <summary>
+         Перегрузка оператора сложения
+      </summary>
+       <returns>
+         Сумма векторов
+       </returns>
+       See <Посмотрите cref="Vector3D.Сomposition(Vector3D)"/> для других умножений.
+       <param name="d1">
+        Экземпляр класса Vector3D.</param>
+         <param name="d2">
+          Экземпляр класса Vector3D.</param>
+    </operatorplus>
+    <operatorminus>
+       <summary>
+         Перегрузка оператора вычитания
+       </summary>
+       <returns>
+         Разность векторов
+       </returns>
+       <param name="d1">Экземпляр класса Vector3D.</param>
+       <param name="d2">Экземпляр класса Vector3D.</param>
+    </operatorminus>
+    <operatorm>
+       <summary>
+         Перегрузка оператора умножения
+       </summary>
+       <returns>
+         Произведение векторов
+       </returns>
+       <param name="d1">Экземпляр класса Vector3D.</param>
+       <param name="d2">Экземпляр класса Vector3D.</param>
+    </operatorm>
+    <Composition>
+       <summary>
+         Скалярное произведение
+       </summary>
+       <returns>
+         Скалярное произведение 3-х векторов
+       </returns>
+       <param name="d">Экземпляр класса Vector3D.</param>
+    </Composition>
+    <Compare_vectors>
+       <summary>
+         Сравнение векторов
+       </summary>
+       <returns>
+         Равенство векторов
+       </returns>
+       <example>
+         <code>
+           Vector3D vector_1 = new Vector3D(-5, 3, -9);
+           Vector3D vector_2 = new Vector3D(4, -2, 8);
+           vector_1.Compare_vectors(vector_1, vector_2);
+         </code>
+       </example>
+       <param name="d1">Экземпляр класса Vector3D.</param>
+       <param name="d2">Экземпляр класса Vector3D.</param>
+    </Compare_vectors>
+    <vector_lenght>
+       <summary>
+         Вычисление длины векторов
+       </summary>
+        <returns>
+         Длина векторов
+        </returns>
+       <param name="d">Экземпляр класса Vector3D.</param>
+    </vector_lenght>
+    <vectors_lenght>
+      <summary>
+        Вычисление длины вектора
+      </summary>
+      <returns>
+        Длина вектора
+      </returns>
+      <param name="d">Экземпляр класса Vector3D.</param>
+    </vectors_lenght>
+  </member>
+</docs>
+
